@@ -18,30 +18,29 @@ function newImage (event) {
     var city = document.querySelector('#city-type')
     var cityName = city.value.toLowerCase();
     var body = document.querySelector('body')
+        body.classList.remove('nyc','sf','sydney','la','austin')
 
     // 3.) Use JS if statement to compare user input to a city name (I'd probably use a case statement here)
     if (cityName == 'nyc' ||
     cityName == 'new york city') {
         // clear any previous className added to the classList
-        body.className = '';
         body.classList.add('nyc') // change to the nyc.jpg background
     } else if (cityName == 'la' ||
     cityName == 'los angeles') {
         // clear any previous className added to the classList
-        body.className = '';
         body.classList.add('la') // change to the la.jpg background
     } else if (cityName == 'sf' ||
     cityName == 'san francisco') {
-        body.className = ''; // clear any previous className added to the classList
+        console.log(cityName)
         body.classList.add('sf') // change to the sf.jpg background
     } else if (cityName == 'austin') {      
-        body.className = ''; // clear any previous className added to the classList
+// clear any previous className added to the body.classList ---   body.className = ''; 
         body.classList.add('austin') // change to the austin.jpg background
     } else if (cityName == 'sydney') {
-        body.className = ''; // clear any previous className added to the classList
         body.classList.add('sydney') //// change to the sydney.jpg background
     } else {
         // if not a city in the list of images give an alert to the user (a dropdown list of city backgrounds might be better than an input box here)
+        body.className = '';
         alert(`The city you selected doesn't have a background image associated wth instanceof. Please select another!`)
     }
 } 
